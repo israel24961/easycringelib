@@ -38,7 +38,10 @@ typedef struct {
 
 typedef struct {
   u64 size;
-  u8 *data;
+  union {
+    u8 *data;
+    void *datav;
+  };
 } su64;
 
 typedef struct {
