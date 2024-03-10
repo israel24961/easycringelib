@@ -41,6 +41,7 @@ typedef struct {
   union {
     u8 *data;
     void *datav;
+    char *datac;
   };
 } su64;
 
@@ -77,3 +78,5 @@ typedef u32u32u32 u32_3; // Cringe but I've used this for OpenGL indexes
 #endif
 
 typedef void fn;
+
+#define __attr(X) __attribute__(( __##X##__ ))
