@@ -80,3 +80,11 @@ typedef u32u32u32 u32_3; // Cringe but I've used this for OpenGL indexes
 typedef void fn;
 
 #define __attr(X) __attribute__(( __##X##__ ))
+
+#include <stdlib.h>
+static inline void freep(void *p) {
+        free(*(void**) p);
+}
+
+#define __clean  __attribute__((cleanup(freep)))
+
