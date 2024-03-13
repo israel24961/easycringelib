@@ -59,7 +59,19 @@ typedef struct {
     u32 u2;
   };
 } u32u32u32;
+
 typedef u32u32u32 u32_3; // Cringe but I've used this for OpenGL indexes
+
+typedef struct {
+    union{
+        f32 x;
+        f32 a;
+    };
+    union{
+        f32 y;
+        f32 b;
+    };
+} f32f32;
 
 // casting and when 'anonymous struct returns' are allowed 😥
 #define verr(type)                                                             \
