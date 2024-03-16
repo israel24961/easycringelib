@@ -47,6 +47,19 @@ typedef struct {
 
 typedef struct {
   union {
+    u32 x;
+    u32 a;
+    u32 u0;
+  };
+  union {
+    u32 y;
+    u32 b;
+    u32 u1;
+  };
+}u32u32;
+
+typedef struct {
+  union {
     u32 a;
     u32 u0;
   };
