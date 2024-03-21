@@ -76,6 +76,24 @@ typedef struct {
 typedef u32u32u32 u32_3; // Cringe but I've used this for OpenGL indexes
 
 typedef struct {
+  union {
+    u32 a;
+    u32 u0;
+  };
+  union {
+    u32 b;
+    u32 u1;
+  };
+  union {
+    u32 c;
+    u32 u2;
+  };
+  union {
+    u32 d;
+    u32 u3;
+  };
+} u32_4;
+typedef struct {
     union{
         f32 x;
         f32 a;
@@ -112,4 +130,11 @@ static inline void freep(void *p) {
 }
 
 #define __clean  __attribute__((cleanup(freep)))
+
+#define _r restrict
+
+
+typedef struct {
+    void *p0,*p1;
+} PP;
 
